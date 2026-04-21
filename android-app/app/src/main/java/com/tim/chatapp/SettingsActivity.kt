@@ -73,6 +73,7 @@ class SettingsActivity : AppCompatActivity() {
     }
 
     private fun wipeAndRestart() {
+        // Clear in-memory via each store
         DeviceStorage.clear(this)
         PreKeyStore.deleteAllKeys(this)
         ContactStore.clear(this)
@@ -80,6 +81,18 @@ class SettingsActivity : AppCompatActivity() {
         GroupKeyStore.clear(this)
         MessageStore.clear(this)
         RatchetStateStore.deleteAll(this)
+
+        // Delete the actual SharedPreferences files so nothing lingers
+        listOf(
+            "device_prefs",
+            "silentlink_prekeys",
+            "contact_store",
+            "group_store",
+            "group_key_store",
+            "message_history",
+            "ratchet_sessions",
+        ).forEach { deleteSharedPreferences(it) }
+
         val intent = Intent(this, MainActivity::class.java)
         intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
         startActivity(intent)
