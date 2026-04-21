@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#09090F">
+
+    <!-- Header -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingHorizontal="16dp"
+        android:paddingTop="16dp"
+        android:paddingBottom="12dp"
+        android:background="#0F0F1A"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/buttonBack"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:text="←"
+            android:textColor="#6C5CE7"
+            android:textSize="22sp"
+            android:gravity="center"
+            android:layout_marginEnd="4dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Einstellungen"
+            android:textSize="18sp"
+            android:textColor="#EEEEFF"
+            android:textStyle="bold"/>
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <!-- Profil-Karte -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="16dp"
+                android:background="#111120"
+                android:layout_marginBottom="24dp">
+
+                <TextView
+                    android:id="@+id/textAvatarLarge"
+                    android:layout_width="56dp"
+                    android:layout_height="56dp"
+                    android:gravity="center"
+                    android:textColor="#FFFFFF"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    android:background="@drawable/bg_avatar"/>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:paddingStart="16dp">
+
+                    <TextView
+                        android:id="@+id/textDisplayName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#EEEEFF"
+                        android:textSize="18sp"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:id="@+id/textDeviceId"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#505068"
+                        android:textSize="12sp"
+                        android:layout_marginTop="4dp"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- Sicherheitsnummer -->
+            <TextView
+                android:id="@+id/buttonSafetyNumber"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:text="Sicherheitsnummer prüfen"
+                android:textColor="#A48AFF"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:background="#111120"
+                android:layout_marginBottom="12dp"/>
+
+            <!-- Abmelden -->
+            <TextView
+                android:id="@+id/buttonLogout"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:text="Abmelden"
+                android:textColor="#FF6B6B"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:background="#1A0F0F"
+                android:layout_marginBottom="12dp"/>
+
+            <!-- Konto löschen -->
+            <TextView
+                android:id="@+id/buttonDeleteAccount"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:text="Konto &amp; alle Daten löschen"
+                android:textColor="#FF4444"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:background="#200A0A"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

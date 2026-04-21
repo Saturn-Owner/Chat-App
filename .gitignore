@@ -4,3 +4,20 @@ CLAUDE.md
 
 # Lokale Tests
 tim-test/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.env
+
+# Android Build
+android-app/build/
+android-app/app/build/
+android-app/.gradle/
+android-app/local.properties
+android-app/.kotlin/
+
+# IDE
+.idea/caches/
+*.iml

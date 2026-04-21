@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#09090F">
+
+    <!-- Header -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingHorizontal="20dp"
+        android:paddingTop="20dp"
+        android:paddingBottom="16dp"
+        android:background="#0F0F1A">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SilentLink"
+            android:textSize="22sp"
+            android:textColor="#EEEEFF"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Chats"
+            android:textSize="13sp"
+            android:textColor="#505068"/>
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <!-- Kontaktliste -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerContacts"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:paddingBottom="80dp"/>
+
+        <!-- Leer-Hinweis -->
+        <LinearLayout
+            android:id="@+id/textEmpty"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="🔒"
+                android:textSize="48sp"
+                android:gravity="center"
+                android:layout_marginBottom="16dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Keine Kontakte"
+                android:textColor="#EEEEFF"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:gravity="center"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tippe auf + um jemanden hinzuzufügen"
+                android:textColor="#505068"
+                android:textSize="14sp"
+                android:gravity="center"
+                android:layout_marginTop="8dp"/>
+
+        </LinearLayout>
+
+        <!-- Dimm-Overlay -->
+        <View
+            android:id="@+id/fabOverlay"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#000000"
+            android:alpha="0"
+            android:visibility="gone"
+            android:clickable="true"/>
+
+        <!-- Speed-Dial Menü (unten links) -->
+        <LinearLayout
+            android:id="@+id/fabMenu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|start"
+            android:layout_marginStart="12dp"
+            android:layout_marginBottom="88dp"
+            android:orientation="vertical"
+            android:alpha="0"
+            android:scaleX="0.5"
+            android:scaleY="0.5"
+            android:visibility="invisible"
+            android:pivotX="0">
+
+            <!-- Neue Gruppe -->
+            <LinearLayout
+                android:id="@+id/fabOptionGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Neue Gruppe"
+                    android:textColor="#EEEEFF"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:background="#1A1A2E"
+                    android:paddingHorizontal="14dp"
+                    android:paddingVertical="8dp"
+                    android:layout_marginEnd="12dp"/>
+
+                <TextView
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:text="#"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:background="@drawable/bg_fab_group"/>
+
+            </LinearLayout>
+
+            <!-- Kontakt hinzufügen -->
+            <LinearLayout
+                android:id="@+id/fabOptionContact"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Kontakt hinzufügen"
+                    android:textColor="#EEEEFF"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:background="#1A1A2E"
+                    android:paddingHorizontal="14dp"
+                    android:paddingVertical="8dp"
+                    android:layout_marginEnd="12dp"/>
+
+                <TextView
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:text="+"
+                    android:textColor="#FFFFFF"
+                    android:textSize="22sp"
+                    android:gravity="center"
+                    android:background="@drawable/bg_fab_contact"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- Haupt-FAB unten links -->
+        <TextView
+            android:id="@+id/buttonAddContact"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_gravity="bottom|start"
+            android:layout_margin="20dp"
+            android:text="+"
+            android:textColor="#FFFFFF"
+            android:textSize="26sp"
+            android:gravity="center"
+            android:background="@drawable/bg_button_primary"
+            android:elevation="6dp"/>
+
+        <!-- Settings unten rechts -->
+        <TextView
+            android:id="@+id/buttonSettings"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="20dp"
+            android:text="⚙"
+            android:textColor="#505068"
+            android:textSize="22sp"
+            android:gravity="center"
+            android:elevation="6dp"/>
+
+    </FrameLayout>
+
+</LinearLayout>

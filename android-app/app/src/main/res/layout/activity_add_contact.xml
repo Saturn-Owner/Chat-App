@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#09090F">
+
+    <!-- Header -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingHorizontal="16dp"
+        android:paddingTop="16dp"
+        android:paddingBottom="12dp"
+        android:background="#0F0F1A"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/buttonBack"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:text="←"
+            android:textColor="#6C5CE7"
+            android:textSize="22sp"
+            android:gravity="center"
+            android:layout_marginEnd="4dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Kontakt hinzufügen"
+            android:textSize="18sp"
+            android:textColor="#EEEEFF"
+            android:textStyle="bold"/>
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <!-- Section: Deinen Code teilen -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="DEINEN CODE TEILEN"
+                android:textColor="#505068"
+                android:textSize="11sp"
+                android:letterSpacing="0.1"
+                android:layout_marginBottom="12dp"/>
+
+            <TextView
+                android:id="@+id/buttonGenerateCode"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:text="Code erstellen"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:background="@drawable/bg_button_primary"/>
+
+            <LinearLayout
+                android:id="@+id/layoutMyCode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_marginTop="20dp"
+                android:padding="20dp"
+                android:background="#111120"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/textMyCode"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#A48AFF"
+                    android:textSize="32sp"
+                    android:textStyle="bold"
+                    android:letterSpacing="0.15"
+                    android:layout_marginBottom="20dp"/>
+
+                <ImageView
+                    android:id="@+id/imageQrCode"
+                    android:layout_width="180dp"
+                    android:layout_height="180dp"
+                    android:padding="10dp"
+                    android:background="#FFFFFF"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Gültig für 24h · Einmalig"
+                    android:textColor="#505068"
+                    android:textSize="12sp"
+                    android:layout_marginTop="12dp"/>
+
+            </LinearLayout>
+
+            <!-- Divider -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#1A1A2A"
+                android:layout_marginVertical="32dp"/>
+
+            <!-- Section: Code eingeben -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CODE EINES KONTAKTS"
+                android:textColor="#505068"
+                android:textSize="11sp"
+                android:letterSpacing="0.1"
+                android:layout_marginBottom="12dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:background="#111120"
+                android:paddingHorizontal="16dp">
+
+                <EditText
+                    android:id="@+id/editCode"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:textColor="#A48AFF"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:hint="XXXXXXXX"
+                    android:textColorHint="#2A2A3A"
+                    android:inputType="textCapCharacters"
+                    android:maxLength="8"
+                    android:letterSpacing="0.15"/>
+
+                <TextView
+                    android:id="@+id/buttonScanQr"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="QR"
+                    android:textColor="#6C5CE7"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:padding="8dp"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/buttonAcceptCode"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:text="Hinzufügen"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:background="@drawable/bg_button_primary"
+                android:layout_marginTop="12dp"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

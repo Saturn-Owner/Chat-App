@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#09090F">
+
+    <!-- Header -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingHorizontal="16dp"
+        android:paddingTop="16dp"
+        android:paddingBottom="12dp"
+        android:background="#0F0F1A"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/buttonBack"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:text="←"
+            android:textColor="#6C5CE7"
+            android:textSize="22sp"
+            android:gravity="center"
+            android:layout_marginEnd="4dp"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Neue Gruppe"
+            android:textSize="18sp"
+            android:textColor="#EEEEFF"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/buttonCreate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Erstellen"
+            android:textColor="#6C5CE7"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:padding="8dp"/>
+
+    </LinearLayout>
+
+    <!-- Gruppenname -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:background="#111120"
+        android:paddingHorizontal="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginHorizontal="16dp">
+
+        <EditText
+            android:id="@+id/editGroupName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:textColor="#EEEEFF"
+            android:textSize="16sp"
+            android:hint="Gruppenname"
+            android:textColorHint="#404055"
+            android:inputType="textCapSentences"
+            android:maxLength="40"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="MITGLIEDER AUSWÄHLEN"
+        android:textColor="#505068"
+        android:textSize="11sp"
+        android:letterSpacing="0.1"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="8dp"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerSelectContacts"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:clipToPadding="false"/>
+
+</LinearLayout>
